@@ -36,10 +36,13 @@ fun Navigation(petViewModel: PetViewModel) {
             HomeScreen(petViewModel, navController = navController)
         }
 
-        composable("pet/{Id}",
-            listOf(navArgument("Id") {
-                type = NavType.IntType
-            })
+        composable(
+            "pet/{Id}",
+            listOf(
+                navArgument("Id") {
+                    type = NavType.IntType
+                }
+            )
         ) { navBackStackEntry ->
             navBackStackEntry.arguments?.getInt("Id")?.let { petId ->
                 PetDetailScreen(petId, petViewModel)

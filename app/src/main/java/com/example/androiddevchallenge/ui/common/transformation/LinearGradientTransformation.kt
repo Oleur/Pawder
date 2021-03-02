@@ -44,12 +44,14 @@ class LinearGradientTransformation(
         val grad =
             LinearGradient(x / 2f, y.toFloat(), x / 2f, y / 2f, startColor, endColor, Shader.TileMode.CLAMP)
 
-        canvas.drawPaint(Paint(Paint.DITHER_FLAG).apply {
-            shader = null
-            isDither = true
-            isFilterBitmap = true
-            shader = grad
-        })
+        canvas.drawPaint(
+            Paint(Paint.DITHER_FLAG).apply {
+                shader = null
+                isDither = true
+                isFilterBitmap = true
+                shader = grad
+            }
+        )
         input.recycle()
         return gradientBitmap
     }

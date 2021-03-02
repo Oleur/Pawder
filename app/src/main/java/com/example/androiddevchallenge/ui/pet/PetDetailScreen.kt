@@ -103,26 +103,28 @@ fun PetDetailScreen(petId: Int, viewModel: PetViewModel) {
                 }
         )
 
-        Column(modifier = Modifier
-            .constrainAs(body) {
-                start.linkTo(parent.start)
-                end.linkTo(parent.end)
-                top.linkTo(parent.top)
-                bottom.linkTo(parent.bottom)
-            }
-            .fillMaxWidth()
-            .verticalScroll(scrollState)
-        ) {
-            Spacer(modifier = Modifier
+        Column(
+            modifier = Modifier
+                .constrainAs(body) {
+                    start.linkTo(parent.start)
+                    end.linkTo(parent.end)
+                    top.linkTo(parent.top)
+                    bottom.linkTo(parent.bottom)
+                }
                 .fillMaxWidth()
-                .height(364.dp)
+                .verticalScroll(scrollState)
+        ) {
+            Spacer(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(364.dp)
             )
             PetDetails(pet = pet)
         }
 
         Button(
             shape = RoundedCornerShape(24.dp),
-            onClick = {  },
+            onClick = { },
             modifier = Modifier
                 .constrainAs(button) {
                     start.linkTo(parent.start)
@@ -306,11 +308,11 @@ fun PetInfoCard(position: Int, info: PetInfo) {
             Box(
                 contentAlignment = Alignment.Center,
                 modifier = Modifier
-                .wrapContentWidth()
-                .wrapContentWidth()
+                    .wrapContentWidth()
+                    .wrapContentWidth()
             ) {
                 CircularProgressIndicator(
-                    progress = info.value/100f,
+                    progress = info.value / 100f,
                     color = bgDarkColors[position],
                     strokeWidth = 8.dp,
                     modifier = Modifier.size(56.dp)

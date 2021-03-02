@@ -132,7 +132,7 @@ fun HomeScreen(viewModel: PetViewModel, navController: NavController) {
                     }
                 }
         )
-        
+
         Image(
             painter = painterResource(id = R.drawable.ic_baseline_pets_24),
             contentDescription = "",
@@ -151,9 +151,11 @@ fun HomeScreen(viewModel: PetViewModel, navController: NavController) {
             content = {
                 items(pets.value.size + 2 /* Spacer */) {
                     if (it <= 1) {
-                        Spacer(modifier = Modifier
-                            .fillMaxWidth()
-                            .height(listHeaderSize))
+                        Spacer(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .height(listHeaderSize)
+                        )
                     } else {
                         PetItem(pet = pets.value[it - 2], navController)
                     }
@@ -242,5 +244,4 @@ fun PetItem(pet: Pet, navController: NavController) {
             }
         }
     }
-
 }
