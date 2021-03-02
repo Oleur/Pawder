@@ -7,11 +7,15 @@
 
 ## :scroll: Description
 <!--- Describe your app in one or two sentences -->
-
+Pawder is an application for finding dogs (puppies or not) to adopt!
+Give some love to wonderful animal cause they will sbarkle your life!
 
 ## :bulb: Motivation and Context
 <!--- Optionally point readers to interesting parts of your submission. -->
 <!--- What are you especially proud of? -->
+A very nice overview on building UI components with Jetpack Compose.
+It was very cool to easily animate composables thanks animatable state. It allows to build complex animation very easily.
+The navigation is also very interesting, concepts are easy to understand and easy to setup in an application.
 
 
 ## :camera_flash: Screenshots
