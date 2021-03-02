@@ -20,11 +20,15 @@ fun Navigation(petViewModel: PetViewModel) {
         composable("home") {
             HomeScreen(petViewModel, navController = navController)
         }
-        composable("pet/{petId}", listOf(navArgument("petId") {
-            type = NavType.IntType
-        })) { navBackStackEntry ->
-            val petId = navBackStackEntry.arguments?.getInt("petId")
-            PetDetailScreen(petId, petViewModel)
+
+        composable("pet/{Id}",
+            listOf(navArgument("Id") {
+                type = NavType.IntType
+            })
+        ) { navBackStackEntry ->
+            navBackStackEntry.arguments?.getInt("Id")?.let { petId ->
+                PetDetailScreen(petId, petViewModel)
+            }
         }
     }
 }

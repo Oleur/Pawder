@@ -16,8 +16,10 @@
 package com.example.androiddevchallenge.ui.theme
 
 import androidx.compose.material.Typography
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 
@@ -27,17 +29,45 @@ val typography = Typography(
         fontFamily = FontFamily.Default,
         fontWeight = FontWeight.Normal,
         fontSize = 16.sp
-    )
-        /* Other default text styles to override
-    button = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.W500,
-        fontSize = 14.sp
+    ),
+    body2 = TextStyle(
+        color = Color.White,
+        fontSize = 12.sp,
+        fontWeight = FontWeight.Normal,
+        fontFamily = FontFamily.Monospace
+    ),
+    subtitle1 = TextStyle(
+        color = darkGreyLight,
+        fontSize = 16.sp,
+        fontWeight = FontWeight.Normal,
+        fontFamily = FontFamily.Monospace
     ),
     caption = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.Normal,
-        fontSize = 12.sp
+        fontSize = 18.sp,
+        fontWeight = FontWeight.Light,
+        fontFamily = FontFamily.Monospace,
+        fontStyle = FontStyle.Italic
+    ),
+    h3 = TextStyle(
+        fontSize = 34.sp,
+        fontWeight = FontWeight.Black,
+        fontFamily = FontFamily.Monospace,
+        color = dark
+    ),
+    h4 = TextStyle(
+        fontSize = 32.sp,
+        fontWeight = FontWeight.Bold,
+        fontFamily = FontFamily.Monospace
+    ),
+    h5 = TextStyle(
+        fontSize = 22.sp,
+        fontWeight = FontWeight.Bold,
+        fontFamily = FontFamily.Monospace
+    ),
+    h6 = TextStyle(
+        color = Color.White,
+        fontSize = 18.sp,
+        fontWeight = FontWeight.Black,
+        fontFamily = FontFamily.Monospace
     )
-    */
 )

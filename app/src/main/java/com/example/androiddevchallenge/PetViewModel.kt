@@ -16,8 +16,13 @@ class PetViewModel @Inject constructor(
 ) : ViewModel() {
 
     val pets = MutableStateFlow<List<Pet>>(emptyList())
+    val pet = MutableStateFlow<Pet?>(null)
 
     fun getPets() = viewModelScope.launch(Dispatchers.IO) {
         pets.emit(repository.getPets())
+    }
+
+    fun getPet(id: Int) = viewModelScope.launch(Dispatchers.IO) {
+        pet.emit(repository.getPet(id))
     }
 }

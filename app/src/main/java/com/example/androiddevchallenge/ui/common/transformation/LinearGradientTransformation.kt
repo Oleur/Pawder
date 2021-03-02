@@ -1,6 +1,11 @@
 package com.example.androiddevchallenge.ui.common.transformation
 
-import android.graphics.*
+import android.graphics.Bitmap
+import android.graphics.Canvas
+import android.graphics.Color
+import android.graphics.LinearGradient
+import android.graphics.Paint
+import android.graphics.Shader
 import coil.bitmap.BitmapPool
 import coil.size.Size
 import coil.transform.Transformation

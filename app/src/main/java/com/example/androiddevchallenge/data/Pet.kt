@@ -6,5 +6,11 @@ data class Pet(
     val desc: String,
     val imageUrl: String,
     val age: Int,
-    val breed: String
+    val breed: String,
+    val infoList: List<PetInfo>
+)
+
+data class PetInfo(
+    val category: String,
+    val value: Int
 )

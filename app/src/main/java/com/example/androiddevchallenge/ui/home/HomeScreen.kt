@@ -3,7 +3,14 @@ package com.example.androiddevchallenge.ui.home
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.wrapContentHeight
+import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.lazy.GridCells
 import androidx.compose.foundation.lazy.LazyVerticalGrid
 import androidx.compose.foundation.lazy.rememberLazyListState
@@ -15,19 +22,14 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.font.FontFamily
-import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.min
-import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.navigation.NavController
 import androidx.navigation.compose.navigate
@@ -37,7 +39,11 @@ import com.example.androiddevchallenge.R
 import com.example.androiddevchallenge.data.Pet
 import com.example.androiddevchallenge.ui.common.transformation.LinearGradientTransformation
 import com.example.androiddevchallenge.ui.theme.orange
+import com.example.androiddevchallenge.ui.theme.typography
 import dev.chrisbanes.accompanist.coil.CoilImage
+
+private val listHeaderSize = 100.dp
+private val maxElevation = 8.dp
 
 @ExperimentalFoundationApi
 @Composable
@@ -64,15 +70,17 @@ fun HomeScreen(viewModel: PetViewModel, navController: NavController) {
                     if (listState.firstVisibleItemIndex == 0) {
                         translationY = -offset * 1.32f
                         shape = RoundedCornerShape(
-                            bottomEnd = min(100.dp, 100.dp - offset.toDp().coerceAtMost(100.dp)),
-                            bottomStart = min(100.dp, 100.dp - offset.toDp().coerceAtMost(100.dp))
+                            bottomEnd = min(listHeaderSize, listHeaderSize - offset.toDp().coerceAtMost(listHeaderSize)),
+                            bottomStart = min(listHeaderSize, listHeaderSize - offset.toDp().coerceAtMost(listHeaderSize))
                         )
+                        shadowElevation = kotlin.math.max(0f, maxElevation.toPx() * offset / listHeaderSize.toPx())
                     } else {
                         translationY = (-132).dp.toPx()
                         shape = RoundedCornerShape(
                             bottomEnd = 0.dp,
                             bottomStart = 0.dp
                         )
+                        shadowElevation = maxElevation.toPx()
                     }
                 }
                 .background(orange)
@@ -80,11 +88,7 @@ fun HomeScreen(viewModel: PetViewModel, navController: NavController) {
 
         Text(
             text = context.getString(R.string.app_name),
-            style = TextStyle(
-                fontSize = 32.sp,
-                fontWeight = FontWeight.Bold,
-                fontFamily = FontFamily.Monospace
-            ),
+            style = typography.h4,
             modifier = Modifier
                 .constrainAs(title) {
                     start.linkTo(parent.start)
@@ -97,12 +101,7 @@ fun HomeScreen(viewModel: PetViewModel, navController: NavController) {
 
         Text(
             text = context.getString(R.string.app_desc),
-            style = TextStyle(
-                fontSize = 18.sp,
-                fontWeight = FontWeight.Light,
-                fontFamily = FontFamily.Monospace,
-                fontStyle = FontStyle.Italic
-            ),
+            style = typography.caption,
             modifier = Modifier
                 .constrainAs(subtitle) {
                     start.linkTo(parent.start)
@@ -139,7 +138,7 @@ fun HomeScreen(viewModel: PetViewModel, navController: NavController) {
                     if (it <= 1) {
                         Spacer(modifier = Modifier
                             .fillMaxWidth()
-                            .height(100.dp))
+                            .height(listHeaderSize))
                     } else {
                         PetItem(pet = pets.value[it - 2], navController)
                     }
@@ -153,7 +152,7 @@ fun HomeScreen(viewModel: PetViewModel, navController: NavController) {
 fun PetItem(pet: Pet, navController: NavController) {
     Button(
         onClick = {
-            navController.navigate("pet/${pet.id}}")
+            navController.navigate("pet/${pet.id}")
         },
         shape = MaterialTheme.shapes.large,
         contentPadding = PaddingValues(0.dp),
@@ -190,12 +189,7 @@ fun PetItem(pet: Pet, navController: NavController) {
 
                 Text(
                     text = pet.name,
-                    style = TextStyle(
-                        color = Color.White,
-                        fontSize = 18.sp,
-                        fontWeight = FontWeight.Black,
-                        fontFamily = FontFamily.Monospace
-                    ),
+                    style = typography.h6,
                     modifier = Modifier
                         .constrainAs(name) {
                             bottom.linkTo(pawImg.top)
@@ -208,7 +202,7 @@ fun PetItem(pet: Pet, navController: NavController) {
 
                 Image(
                     painter = painterResource(id = R.drawable.ic_baseline_pets_24),
-                    contentDescription = "",
+                    contentDescription = "Paw Icon",
                     modifier = Modifier
                         .constrainAs(pawImg) {
                             bottom.linkTo(image.bottom)
@@ -219,12 +213,7 @@ fun PetItem(pet: Pet, navController: NavController) {
 
                 Text(
                     text = "age: ${pet.age} months",
-                    style = TextStyle(
-                        color = Color.White,
-                        fontSize = 12.sp,
-                        fontWeight = FontWeight.Medium,
-                        fontFamily = FontFamily.Monospace
-                    ),
+                    style = typography.body2.copy(fontWeight = FontWeight.Medium),
                     overflow = TextOverflow.Ellipsis,
                     modifier = Modifier
                         .constrainAs(age) {

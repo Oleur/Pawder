@@ -13,10 +13,28 @@ class PetRepository @Inject constructor() {
             Pet(
                 id = 0,
                 name = "Alpha",
-                desc = "",
+                desc = "Dogs (Canis lupus familiaris) are domesticated mammals, not natural wild animals. They were originally bred from wolves. They have been bred by humans for a long time, and were the first animals ever to be domesticated. ... They are a popular pet because they are usually playful, friendly, loyal and listen to humans.",
                 imageUrl = "https://images.pexels.com/photos/3726314/pexels-photo-3726314.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
                 age = 2,
-                breed = "Husky"
+                breed = "Husky",
+                infoList = arrayListOf(
+                    PetInfo(
+                        category = "Kindness",
+                        value = 90
+                    ),
+                    PetInfo(
+                        category = "Activity",
+                        value = 80
+                    ),
+                    PetInfo(
+                        category = "Healthy",
+                        value = 98
+                    ),
+                    PetInfo(
+                        category = "Fluffiness",
+                        value = 78
+                    ),
+                )
             ),
             Pet(
                 id = 1,
@@ -24,7 +42,25 @@ class PetRepository @Inject constructor() {
                 desc = "",
                 imageUrl = "https://images.pexels.com/photos/3860304/pexels-photo-3860304.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
                 age = 3,
-                breed = "Labrador"
+                breed = "Labrador",
+                infoList = arrayListOf(
+                    PetInfo(
+                        category = "Kindness",
+                        value = 90
+                    ),
+                    PetInfo(
+                        category = "Activity",
+                        value = 80
+                    ),
+                    PetInfo(
+                        category = "Healthy",
+                        value = 98
+                    ),
+                    PetInfo(
+                        category = "Fluffiness",
+                        value = 78
+                    ),
+                )
             ),
             Pet(
                 id = 2,
@@ -32,7 +68,25 @@ class PetRepository @Inject constructor() {
                 desc = "",
                 imageUrl = "https://images.pexels.com/photos/4587998/pexels-photo-4587998.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
                 age = 1,
-                breed = "Bulldog"
+                breed = "Bulldog",
+                infoList = arrayListOf(
+                    PetInfo(
+                        category = "Kindness",
+                        value = 90
+                    ),
+                    PetInfo(
+                        category = "Activity",
+                        value = 80
+                    ),
+                    PetInfo(
+                        category = "Healthy",
+                        value = 98
+                    ),
+                    PetInfo(
+                        category = "Fluffiness",
+                        value = 78
+                    ),
+                )
             ),
             Pet(
                 id = 3,
@@ -40,7 +94,25 @@ class PetRepository @Inject constructor() {
                 desc = "",
                 imageUrl = "https://images.pexels.com/photos/3976279/pexels-photo-3976279.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
                 age = 18,
-                breed = "Cocker"
+                breed = "Cocker",
+                infoList = arrayListOf(
+                    PetInfo(
+                        category = "Kindness",
+                        value = 90
+                    ),
+                    PetInfo(
+                        category = "Activity",
+                        value = 80
+                    ),
+                    PetInfo(
+                        category = "Healthy",
+                        value = 98
+                    ),
+                    PetInfo(
+                        category = "Fluffiness",
+                        value = 78
+                    ),
+                )
             ),
             Pet(
                 id = 4,
@@ -48,7 +120,25 @@ class PetRepository @Inject constructor() {
                 desc = "",
                 imageUrl = "https://images.pexels.com/photos/1390361/pexels-photo-1390361.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
                 age = 48,
-                breed = "Cavalier King Charles"
+                breed = "Cavalier King Charles",
+                infoList = arrayListOf(
+                    PetInfo(
+                        category = "Kindness",
+                        value = 90
+                    ),
+                    PetInfo(
+                        category = "Activity",
+                        value = 80
+                    ),
+                    PetInfo(
+                        category = "Healthy",
+                        value = 98
+                    ),
+                    PetInfo(
+                        category = "Fluffiness",
+                        value = 78
+                    ),
+                )
             ),
             Pet(
                 id = 5,
@@ -56,7 +146,25 @@ class PetRepository @Inject constructor() {
                 desc = "",
                 imageUrl = "https://images.pexels.com/photos/2664417/pexels-photo-2664417.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
                 age = 1,
-                breed = "Corgi"
+                breed = "Corgi",
+                infoList = arrayListOf(
+                    PetInfo(
+                        category = "Kindness",
+                        value = 90
+                    ),
+                    PetInfo(
+                        category = "Activity",
+                        value = 80
+                    ),
+                    PetInfo(
+                        category = "Healthy",
+                        value = 98
+                    ),
+                    PetInfo(
+                        category = "Fluffiness",
+                        value = 78
+                    ),
+                )
             ),
             Pet(
                 id = 6,
@@ -64,7 +172,25 @@ class PetRepository @Inject constructor() {
                 desc = "",
                 imageUrl = "https://images.pexels.com/photos/4588030/pexels-photo-4588030.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
                 age = 4,
-                breed = "Shar Pei"
+                breed = "Shar Pei",
+                infoList = arrayListOf(
+                    PetInfo(
+                        category = "Kindness",
+                        value = 90
+                    ),
+                    PetInfo(
+                        category = "Activity",
+                        value = 80
+                    ),
+                    PetInfo(
+                        category = "Healthy",
+                        value = 98
+                    ),
+                    PetInfo(
+                        category = "Fluffiness",
+                        value = 78
+                    ),
+                )
             ),
             Pet(
                 id = 7,
@@ -72,7 +198,103 @@ class PetRepository @Inject constructor() {
                 desc = "",
                 imageUrl = "https://images.pexels.com/photos/3763313/pexels-photo-3763313.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
                 age = 2,
-                breed = "Dalmatian"
+                breed = "Dalmatian",
+                infoList = arrayListOf(
+                    PetInfo(
+                        category = "Kindness",
+                        value = 90
+                    ),
+                    PetInfo(
+                        category = "Activity",
+                        value = 80
+                    ),
+                    PetInfo(
+                        category = "Healthy",
+                        value = 98
+                    ),
+                    PetInfo(
+                        category = "Fluffiness",
+                        value = 78
+                    ),
+                )
+            ),
+            Pet(
+                id = 8,
+                name = "Hector",
+                desc = "",
+                imageUrl = "https://images.pexels.com/photos/4130054/pexels-photo-4130054.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                age = 23,
+                breed = "Golden Retriever",
+                infoList = arrayListOf(
+                    PetInfo(
+                        category = "Kindness",
+                        value = 90
+                    ),
+                    PetInfo(
+                        category = "Activity",
+                        value = 80
+                    ),
+                    PetInfo(
+                        category = "Healthy",
+                        value = 98
+                    ),
+                    PetInfo(
+                        category = "Fluffiness",
+                        value = 78
+                    ),
+                )
+            ),
+            Pet(
+                id = 9,
+                name = "Fritz",
+                desc = "",
+                imageUrl = "https://images.pexels.com/photos/374898/pexels-photo-374898.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                age = 32,
+                breed = "Pug",
+                infoList = arrayListOf(
+                    PetInfo(
+                        category = "Kindness",
+                        value = 90
+                    ),
+                    PetInfo(
+                        category = "Activity",
+                        value = 80
+                    ),
+                    PetInfo(
+                        category = "Healthy",
+                        value = 98
+                    ),
+                    PetInfo(
+                        category = "Fluffiness",
+                        value = 78
+                    ),
+                )
+            ),
+            Pet(
+                id = 10,
+                name = "Edou",
+                desc = "",
+                imageUrl = "https://images.pexels.com/photos/3361739/pexels-photo-3361739.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
+                age = 43,
+                breed = "Shi Tzu",
+                infoList = arrayListOf(
+                    PetInfo(
+                        category = "Kindness",
+                        value = 90
+                    ),
+                    PetInfo(
+                        category = "Activity",
+                        value = 80
+                    ),
+                    PetInfo(
+                        category = "Healthy",
+                        value = 98
+                    ),
+                    PetInfo(
+                        category = "Fluffiness",
+                        value = 78
+                    ),
+                )
             )
         )
     }
